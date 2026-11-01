@@ -16,7 +16,10 @@ export default function Dashboard() {
                 <h1 className="text-2xl font-semibold">Game Library</h1>
                 <ol className="divide-y rounded-xl border">
                     {sampleGames.map((game, index) => (
-                        <li key={game.id} className="flex items-center gap-3 p-4">
+                        <li
+                            key={game.id}
+                            className="flex items-center gap-3 p-4"
+                        >
                             <span className="w-6 text-right text-sm text-muted-foreground tabular-nums">
                                 {index + 1}
                             </span>
