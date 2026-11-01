@@ -1,36 +1,35 @@
 import { Head } from '@inertiajs/react';
-import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
-import { dashboard } from '@/routes';
+import type { Game } from '@/types';
+
+// Sample data until the backend exists (phase 5).
+const sampleGames: Game[] = [
+    { id: 1, name: 'Catan', votes: 5, voted: false },
+    { id: 2, name: 'Codenames', votes: 3, voted: true },
+    { id: 3, name: 'Mario Kart 8 Deluxe', votes: 0, voted: false },
+];
 
 export default function Dashboard() {
     return (
         <>
-            <Head title="Dashboard" />
-            <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
-                <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                    <div className="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
-                    </div>
-                    <div className="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
-                    </div>
-                    <div className="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
-                    </div>
-                </div>
-                <div className="relative min-h-[100vh] flex-1 overflow-hidden rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border">
-                    <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
-                </div>
+            <Head title="Game library" />
+            <div className="flex flex-col gap-6">
+                <h1 className="text-2xl font-semibold">Game Library</h1>
+                <ol className="divide-y rounded-xl border">
+                    {sampleGames.map((game, index) => (
+                        <li key={game.id} className="flex items-center gap-3 p-4">
+                            <span className="w-6 text-right text-sm text-muted-foreground tabular-nums">
+                                {index + 1}
+                            </span>
+                            <span className="flex-1 truncate font-medium">
+                                {game.name}
+                            </span>
+                            <span className="text-sm tabular-nums">
+                                {game.votes} votes
+                            </span>
+                        </li>
+                    ))}
+                </ol>
             </div>
         </>
     );
 }
-
-Dashboard.layout = {
-    breadcrumbs: [
-        {
-            title: 'Dashboard',
-            href: dashboard(),
-        },
-    ],
-};
