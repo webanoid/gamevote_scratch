@@ -34,5 +34,9 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'essense' => [
+        'url' => env('ESSENSE_API_URL', 'https://codechallenge.essensedesigns.info'),
+        'key' => env('API_KEY_ESSENCE'),
+    ],
 
 ];
