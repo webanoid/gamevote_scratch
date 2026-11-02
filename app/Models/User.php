@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use Carbon\CarbonImmutable;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
@@ -36,9 +37,10 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'password' => 'hashed'
+            'password' => 'hashed',
         ];
     }
+
     /**
      * Get the votes the user has cast.
      *

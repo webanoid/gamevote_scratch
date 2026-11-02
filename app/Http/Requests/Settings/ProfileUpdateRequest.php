@@ -21,6 +21,7 @@ class ProfileUpdateRequest extends FormRequest
     {
         return $this->profileRules($this->user()->id);
     }
+
     /**
      * Lowercase the username to match how Fortify stores it at registration and looks it up at login.
      */

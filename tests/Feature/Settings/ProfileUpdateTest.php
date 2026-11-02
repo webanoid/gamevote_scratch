@@ -32,8 +32,6 @@ test('profile information can be updated', function () {
         ->and($user->username)->toBe('test_user');
 });
 
-
-
 test('user can delete their account', function () {
     $user = User::factory()->create();
 

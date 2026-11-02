@@ -8,9 +8,9 @@ import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
 
 export default function AddGameForm({
-                                        disabled,
-                                        limited,
-                                    }: {
+    disabled,
+    limited,
+}: {
     disabled: boolean;
     limited: boolean;
 }) {
@@ -51,8 +51,8 @@ export default function AddGameForm({
                         {disabled
                             ? 'You can suggest a game again after midnight.'
                             : limited
-                                ? 'Adding a game uses your action for today.'
-                                : 'Add as many games as you like while limits are off.'}
+                              ? 'Adding a game uses your action for today.'
+                              : 'Add as many games as you like while limits are off.'}
                     </p>
                 </>
             )}

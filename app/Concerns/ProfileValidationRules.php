@@ -19,7 +19,7 @@ trait ProfileValidationRules
         return [
             'name' => $this->nameRules(),
             'username' => $this->usernameRules($userId),
-            ];
+        ];
     }
 
     /**

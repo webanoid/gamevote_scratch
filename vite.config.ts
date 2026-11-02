@@ -8,6 +8,7 @@ import { bunny } from 'laravel-vite-plugin/fonts';
 import { defineConfig, lazyPlugins } from 'vite-plus';
 
 export default defineConfig({
+    // @ts-expect-error TS2321: vite-plus bundles its own copy of Vite's types; real vite@8 plugins are compatible at runtime
     plugins: lazyPlugins(() => [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.tsx'],
@@ -15,6 +16,9 @@ export default defineConfig({
             fonts: [
                 bunny('Instrument Sans', {
                     weights: [400, 500, 600],
+                }),
+                bunny('Rubik Spray Paint', {
+                    weights: [400],
                 }),
             ],
         }),
@@ -68,6 +72,8 @@ export default defineConfig({
             'composer.json',
             'resources/js/components/ui/*',
             'resources/views/mail/*',
+            // An exported transcript, kept exactly as generated.
+            'docs/ai-transcript.md',
         ],
         sortTailwindcss: {
             functions: ['clsx', 'cn', 'cva'],

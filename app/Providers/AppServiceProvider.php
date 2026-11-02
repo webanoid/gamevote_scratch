@@ -2,14 +2,14 @@
 
 namespace App\Providers;
 
+use App\Actions\Games\ResetLocalLibrary;
+use App\Services\Essense\ApiKeyProvider;
+use App\Services\Essense\EssenseClient;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
-use App\Actions\Games\ResetLocalLibrary;
-use App\Services\Essense\ApiKeyProvider;
-use App\Services\Essense\EssenseClient;
 
 class AppServiceProvider extends ServiceProvider
 {
